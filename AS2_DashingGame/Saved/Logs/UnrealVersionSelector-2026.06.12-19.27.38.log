@@ -1,0 +1,97 @@
+Log started at 06/12/2026 19:27:44 (2026-06-12T16:27:44Z)
+Resolved project argument D:/UnrealProjects/GAD2006/AS2_DashingGame/AS2_DashingGame.uproject to D:\UnrealProjects\GAD2006\AS2_DashingGame\AS2_DashingGame.uproject
+No config file at C:\ProgramData\Unreal Engine\UnrealBuildTool\BuildConfiguration.xml
+No config file at C:\Users\USER\AppData\Local\Unreal Engine\UnrealBuildTool\BuildConfiguration.xml
+No config file at C:\Users\USER\Documents\Unreal Engine\UnrealBuildTool\BuildConfiguration.xml
+Configuration will be read from:
+  C:\Users\USER\AppData\Roaming\Unreal Engine\UnrealBuildTool\BuildConfiguration.xml
+No project scope config file at D:\UnrealProjects\GAD2006\AS2_DashingGame\Saved\UnrealBuildTool\BuildConfiguration.xml. Creating default.
+Reading configuration file from: C:\Users\USER\AppData\Roaming\Unreal Engine\UnrealBuildTool\BuildConfiguration.xml
+Reading configuration file from: D:\UnrealProjects\GAD2006\AS2_DashingGame\Saved\UnrealBuildTool\BuildConfiguration.xml
+Reading configuration file from: C:\Users\USER\AppData\Local\UnrealEngine\Intermediate\Build\UnrealBuildTool.Env.BuildConfiguration.xml
+Log file: D:\UnrealProjects\GAD2006\AS2_DashingGame\Saved\Logs\UnrealVersionSelector-2026.06.12-19.27.38.log
+
+Setting temp directory to 'C:\Users\USER\AppData\Local\Temp\UnrealBuildTool\c72493dc'
+    Registering build platform: UnrealBuildTool.AndroidPlatformFactory
+    Registering build platform: UnrealBuildTool.IOSPlatformFactory
+    Registering build platform: UnrealBuildTool.LinuxPlatformFactory
+    Registering build platform: UnrealBuildTool.MacPlatformFactory
+    Registering build platform: UnrealBuildTool.TVOSPlatformFactory
+    Registering build platform: UnrealBuildTool.WindowsPlatformFactory
+Found Windows 10 SDK root at C:\Program Files (x86)\Windows Kits\10 (1)
+Found Windows 10 SDK root at C:\Program Files (x86)\Windows Kits\10 (2)
+Found Windows 10 SDK version 10.0.19041.0 at C:\Program Files (x86)\Windows Kits\10
+Found Universal CRT version 10.0.19041.0 at C:\Program Files (x86)\Windows Kits\10
+Found Windows 10 SDK version 10.0.22621.0 at C:\Program Files (x86)\Windows Kits\10
+Found Universal CRT version 10.0.22621.0 at C:\Program Files (x86)\Windows Kits\10
+Win64 Installed SDK(s): MinVersion_Sdk=10.0.19041.0, MaxVersion_Sdk=10.9.99999.0, CurrentVersion_Sdk=10.0.22621.0, Version_AutoSdk=10.0.22621.0, CurrentVersion_AutoSdk=
+        Registering build platform: Win64 - buildable: True
+    Registering build platform: UnrealBuildTool.VisionOSPlatformFactory
+Resolved project argument D:/UnrealProjects/GAD2006/AS2_DashingGame/AS2_DashingGame.uproject to D:\UnrealProjects\GAD2006\AS2_DashingGame\AS2_DashingGame.uproject
+Reading configuration file from cache (D:\UnrealProjects\GAD2006\AS2_DashingGame\Intermediate\Build\XmlConfigCache.bin): C:\Users\USER\AppData\Roaming\Unreal Engine\UnrealBuildTool\BuildConfiguration.xml
+Reading configuration file from cache (D:\UnrealProjects\GAD2006\AS2_DashingGame\Intermediate\Build\XmlConfigCache.bin): D:\UnrealProjects\GAD2006\AS2_DashingGame\Saved\UnrealBuildTool\BuildConfiguration.xml
+Reading configuration file from cache (D:\UnrealProjects\GAD2006\AS2_DashingGame\Intermediate\Build\XmlConfigCache.bin): C:\Users\USER\AppData\Local\UnrealEngine\Intermediate\Build\UnrealBuildTool.Env.BuildConfiguration.xml
+Registering project generator UnrealBuildTool.AndroidProjectGenerator for Android
+Skipping project file generator registration for Android due to no valid BuildPlatform.
+Registering project generator UnrealBuildTool.IOSProjectGenerator for IOS
+Skipping project file generator registration for IOS due to no valid BuildPlatform.
+Registering project generator UnrealBuildTool.LinuxProjectGenerator for Linux
+Skipping project file generator registration for Linux due to no valid BuildPlatform.
+Registering project generator UnrealBuildTool.LinuxProjectGenerator for LinuxArm64
+Skipping project file generator registration for LinuxArm64 due to no valid BuildPlatform.
+Registering project generator UnrealBuildTool.MacProjectGenerator for Mac
+Skipping project file generator registration for Mac due to no valid BuildPlatform.
+Registering project generator UnrealBuildTool.TVOSProjectGenerator for TVOS
+Skipping project file generator registration for TVOS due to no valid BuildPlatform.
+Registering project generator UnrealBuildTool.WindowsProjectGenerator for Win64
+Registering project generator UnrealBuildTool.VisionOSProjectGenerator for VisionOS
+Skipping project file generator registration for VisionOS due to no valid BuildPlatform.
+
+---   SDK INFO START   ---
+---   SDK INFO END   ---
+
+
+Generating VisualStudio project files:
+Discovering modules, targets and source code for project...
+Updating D:\Epic Games\UE_5.6\Engine\Intermediate\ProjectFiles\PrimaryProjectName.txt: contents have changed. Saving previous version to D:\Epic Games\UE_5.6\Engine\Intermediate\ProjectFiles\PrimaryProjectName.txt.old.
+Updating D:\Epic Games\UE_5.6\Engine\Intermediate\ProjectFiles\PrimaryProjectPath.txt: contents have changed. Saving previous version to D:\Epic Games\UE_5.6\Engine\Intermediate\ProjectFiles\PrimaryProjectPath.txt.old.
+Found VisualStudio2022 installation: C:\Program Files\Microsoft Visual Studio\2022\Community (Product=Microsoft.VisualStudio.Product.Community, Version=17.10.35122.118)
+Found Visual Studio toolchain: C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130 (Family=14.38.33130, FamilyRank=0, Version=14.38.33139, HostArchitecture=x64, ReleaseChannel=Latest, Architecture=x64, Error=False, Redist=C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Redist\MSVC\14.40.33807)
+Found Visual Studio toolchain: C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.40.33807 (Family=14.40.33807, FamilyRank=1, Version=14.40.33813, HostArchitecture=x64, ReleaseChannel=Latest, Architecture=x64, Error=True, Redist=C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Redist\MSVC\14.40.33807)
+Detected supported platforms: Win64
+Adding projects for all targets...
+Skipping D:\Epic Games\UE_5.6\Engine\Intermediate\Build\BuildRules\UE5Rules.dll: File is installed
+Skipping D:\Epic Games\UE_5.6\Engine\Intermediate\Build\BuildRules\UE5ProgramRules.dll: File is installed
+Generating target Editor for D:\UnrealProjects\GAD2006\AS2_DashingGame\Intermediate\ProjectFiles\UE5.vcxproj
+Generating target Game for D:\UnrealProjects\GAD2006\AS2_DashingGame\Intermediate\ProjectFiles\UE5.vcxproj
+Compiling D:\UnrealProjects\GAD2006\AS2_DashingGame\Intermediate\Build\BuildRules\AS2_DashingGameModuleRules.dll: Assembly does not exist
+D:\UnrealProjects\GAD2006\AS2_DashingGame\Source\AS2_DashingGameEditor.Target.cs(11,47): error CS0117: 'BuildSettingsVersion' does not contain a definition for 'V6'
+D:\UnrealProjects\GAD2006\AS2_DashingGame\Source\AS2_DashingGame.Target.cs(11,47): error CS0117: 'BuildSettingsVersion' does not contain a definition for 'V6'
+Adding projects for all targets took 25.08s
+Expecting to find a type to be declared in a target rules named 'AS2_DashingGameTarget'.  This type must derive from the 'TargetRules' type defined by UnrealBuildTool.
+CompilationResultException: Expecting to find a type to be declared in a target rules named 'AS2_DashingGameTarget'.  This type must derive from the 'TargetRules' type defined by UnrealBuildTool.
+   at UnrealBuildTool.RulesAssembly.CreateTargetRules(String TargetName, UnrealTargetPlatform Platform, UnrealTargetConfiguration Configuration, UnrealArchitectures Architectures, FileReference ProjectFile, CommandLineArguments Arguments, ILogger Logger, Boolean IsTestTarget, TargetRulesValidationOptions ValidationOptions, UnrealIntermediateEnvironment IntermediateEnvironment)
+   at UnrealBuildTool.ProjectFileGenerator.AddProjectsForAllTargets(PlatformProjectGeneratorCollection PlatformProjectGenerators, List`1 AllGames, List`1 AllTargetFiles, String[] Arguments, List`1 EngineProjects, List`1 GameProjects, Dictionary`2 ProjectFileToUProjectFile, Dictionary`2 ProgramProjects, Dictionary`2 RulesAssemblies, ILogger Logger)
+   at UnrealBuildTool.ProjectFileGenerator.GenerateProjectFiles(PlatformProjectGeneratorCollection PlatformProjectGenerators, String[] Arguments, ILogger Logger)
+   at UnrealBuildTool.ProjectFileGenerator.GenerateProjectFiles(PlatformProjectGeneratorCollection PlatformProjectGenerators, String[] Arguments, Boolean bCacheDataForEditor, ILogger Logger)
+   at UnrealBuildTool.GenerateProjectFilesMode.ExecuteAsync(CommandLineArguments Arguments, ILogger Logger)
+   at UnrealBuildTool.UnrealBuildTool.Main(String[] ArgumentsArray)
+WriteFileIfChanged() wrote 2 changed files of 4 requested writes.
+
+Timeline:
+[  0.017]  +2.587 Main
+   0.017          [  0.000]  +1.428 <unknown>
+   1.446          [  1.428]  +0.620 Apply XmlConfig
+   2.067          [  2.049]  +0.342 <unknown>
+   2.409          [  2.391]  +0.195 RegisterPlatforms
+[  2.605] +25.562 GenerateProjectFilesMode
+   2.605          [  0.000]  +0.288 <unknown>
+   2.893          [  0.288] +25.274 Generating VisualStudio project files
+   3.045             0.439          [  0.151]  +0.037 DiscoverTargets
+   3.085             0.480          [  0.192] +25.081 Adding projects for all targets
+[ 28.168]  +0.596 <unknown>
+[ 28.764]  +0.000 TelemetryService.FlushEvents
+[ 28.765]
+
+Result: Failed (RulesError)
+Total execution time: 28.77 seconds
