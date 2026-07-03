@@ -32,6 +32,11 @@ void ADragonCharacter::BeginPlay()
     Super::BeginPlay();
     GetCharacterMovement()->SetMovementMode(MOVE_Flying);
 
+    if (USkeletalMeshComponent* DragonMesh = GetMesh())
+    {
+        BaseMeshRotation = DragonMesh->GetRelativeRotation();
+    }
+
     if (APlayerController* PlayerController = Cast<APlayerController>(Controller))
     {
         if (UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(PlayerController->GetLocalPlayer()))
@@ -74,10 +79,7 @@ void ADragonCharacter::HandleMeshRotation(float DeltaTime)
 
     if (!DragonMesh) return;
 
-    FRotator CurrentRot = DragonMesh->GetRelativeRotation();
-
     float TargetRollAngle = CurrentTurnInput * MaxBankAngle;
-
     float TargetPitchAngle = 0.0f;
 
     if (bIsBraking)
@@ -93,10 +95,14 @@ void ADragonCharacter::HandleMeshRotation(float DeltaTime)
         TargetPitchAngle = CurrentUpInput * MaxPitchUpAngle;
     }
 
-    FRotator TargetRot = FRotator(TargetPitchAngle, CurrentRot.Yaw, TargetRollAngle);
-    FRotator NewRot = FMath::RInterpTo(CurrentRot, TargetRot, DeltaTime, RotationInterpSpeed);
+    FRotator FlightRotationOffset(TargetPitchAngle, 0.0f, TargetRollAngle);
 
-    DragonMesh->SetRelativeRotation(NewRot);
+    FQuat TargetQuat = FlightRotationOffset.Quaternion() * BaseMeshRotation.Quaternion();
+
+    FQuat CurrentQuat = DragonMesh->GetRelativeRotation().Quaternion();
+    FQuat NewQuat = FMath::QInterpTo(CurrentQuat, TargetQuat, DeltaTime, RotationInterpSpeed);
+
+    DragonMesh->SetRelativeRotation(NewQuat.Rotator());
 }
 
 void ADragonCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)

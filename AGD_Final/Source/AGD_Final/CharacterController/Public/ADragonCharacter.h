@@ -47,16 +47,17 @@ protected:
     void HandleForwardMovement(float DeltaTime);
     void HandleMeshRotation(float DeltaTime);
 
-    // --- State Variables ---
     bool bIsBraking = false;
     bool bIsDiving = false;
     float CurrentForwardInput = 0.0f;
     float CurrentTurnInput = 0.0f;
     float CurrentUpInput = 0.0f;
 
-    // --- Configurable Flight Settings ---
+    UPROPERTY()
+    FRotator BaseMeshRotation;
+
     UPROPERTY(EditAnywhere, Category = "Dragon Flight")
-    float HoverSpeed = 1000.f; // Updated to your preferred default
+    float HoverSpeed = 1000.f;
 
     UPROPERTY(EditAnywhere, Category = "Dragon Flight")
     float DiveGravityMultiplier = 4.0f;
