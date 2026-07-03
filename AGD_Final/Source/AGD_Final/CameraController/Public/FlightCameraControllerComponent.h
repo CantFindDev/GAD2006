@@ -33,7 +33,19 @@ protected:
 	float FastFOV = 110.0f;
 
 	UPROPERTY(EditAnywhere, Category = "Flight Camera")
-	float CameraInterpolationSpeed = .5f;
+	float CameraInterpolationSpeed = 2.0f;
+
+	UPROPERTY(EditAnywhere, Category = "Flight Camera|Cinematic")
+	float CameraLagSpeed = 3.0f;
+
+	UPROPERTY(EditAnywhere, Category = "Flight Camera|Cinematic")
+	float RotationLagSpeed = 4.0f;
+
+	UPROPERTY(EditAnywhere, Category = "Flight Camera|Cinematic")
+	FVector StandardOffset = FVector(0.0f, 0.0f, 50.0f);
+
+	UPROPERTY(EditAnywhere, Category = "Flight Camera|Cinematic")
+	FVector DiveOffset = FVector(0.0f, 0.0f, 150.0f);
 
 private:
 	USpringArmComponent* ParentSpringArm;

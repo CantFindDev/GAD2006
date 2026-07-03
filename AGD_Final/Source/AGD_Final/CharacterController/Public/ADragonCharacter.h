@@ -47,10 +47,19 @@ protected:
     void HandleForwardMovement(float DeltaTime);
     void HandleMeshRotation(float DeltaTime);
 
+    UPROPERTY(BlueprintReadOnly, Category = "Dragon Flight|State")
     bool bIsBraking = false;
+
+    UPROPERTY(BlueprintReadOnly, Category = "Dragon Flight|State")
     bool bIsDiving = false;
+
+    UPROPERTY(BlueprintReadOnly, Category = "Dragon Flight|State")
     float CurrentForwardInput = 0.0f;
+
+    UPROPERTY(BlueprintReadOnly, Category = "Dragon Flight|State")
     float CurrentTurnInput = 0.0f;
+
+    UPROPERTY(BlueprintReadOnly, Category = "Dragon Flight|State")
     float CurrentUpInput = 0.0f;
 
     UPROPERTY()
@@ -71,10 +80,10 @@ protected:
     UPROPERTY(EditAnywhere, Category = "Dragon Flight")
     float TurnSpeed = 25.0f;
 
-    UPROPERTY(EditAnywhere, Category = "Dragon Flight|Animation")
+    UPROPERTY(EditAnywhere,BlueprintReadOnly, Category = "Dragon Flight|Animation")
     float MaxBankAngle = 60.0f;
 
-    UPROPERTY(EditAnywhere, Category = "Dragon Flight|Animation")
+    UPROPERTY(EditAnywhere,BlueprintReadOnly, Category = "Dragon Flight|Animation")
     float MaxPitchUpAngle = 25.0f;
 
     UPROPERTY(EditAnywhere, Category = "Dragon Flight|Animation")
