@@ -19,6 +19,9 @@ public:
 
     virtual void PostInitProperties() override;
 
+    UFUNCTION(BlueprintCallable, Category = "Flight")
+    void ForceBrake();
+
 protected:
     virtual void BeginPlay() override;
     virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;

@@ -1,7 +1,7 @@
 ﻿#include "../Public/GameplayHUD.h"
 #include "Components/TextBlock.h"
 #include "Kismet/GameplayStatics.h"
-#include "AGD_Final/GameMode/Public/ATimeTrialGameMode.h"
+#include "AGD_Final/GameMode/Public/TimeTrialGameMode.h"
 
 void UGameplayHUD::NativeConstruct()
 {

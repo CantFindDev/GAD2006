@@ -14,7 +14,7 @@ ADragonCharacter::ADragonCharacter()
     GetCharacterMovement()->BrakingDecelerationFlying = 500.f;
     GetCharacterMovement()->AirControl = 1.0f;
 
-    bIsBraking = false;
+    bIsBraking = true;
     bIsDiving = false;
 }
 
@@ -24,6 +24,21 @@ void ADragonCharacter::PostInitProperties()
     if (GetCharacterMovement())
     {
         GetCharacterMovement()->MaxFlySpeed = HoverSpeed;
+    }
+}
+
+void ADragonCharacter::ForceBrake()
+{
+    bIsBraking = true;
+
+    if (bIsDiving)
+    {
+        bIsDiving = false;
+        GetCharacterMovement()->SetMovementMode(MOVE_Flying);
+
+        FVector CurrentVelocity = GetCharacterMovement()->Velocity;
+        GetCharacterMovement()->Velocity = FVector(CurrentVelocity.X, CurrentVelocity.Y, 0.0f);
+        GetCharacterMovement()->GravityScale = 1.0f;
     }
 }
 
@@ -143,7 +158,6 @@ void ADragonCharacter::MoveUp(const FInputActionValue& Value)
 
 void ADragonCharacter::StartDive(const FInputActionValue& Value)
 {
-    // Prevent diving if we are actively braking
     if (bIsBraking) return;
 
     bIsDiving = true;

@@ -2,7 +2,7 @@
 #include "Components/BoxComponent.h"
 #include "GameFramework/Character.h"
 #include "Kismet/GameplayStatics.h"
-#include "AGD_Final/GameMode/Public/ATimeTrialGameMode.h"
+#include "AGD_Final/GameMode/Public/TimeTrialGameMode.h"
 #include "NiagaraComponent.h"
 #include "Curves/CurveLinearColor.h"
 
