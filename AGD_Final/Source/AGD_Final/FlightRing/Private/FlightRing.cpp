@@ -3,6 +3,8 @@
 #include "GameFramework/Character.h"
 #include "Kismet/GameplayStatics.h"
 #include "AGD_Final/GameMode/Public/ATimeTrialGameMode.h"
+#include "NiagaraComponent.h"
+#include "Curves/CurveLinearColor.h"
 
 AFlightRing::AFlightRing()
 {
@@ -16,6 +18,42 @@ AFlightRing::AFlightRing()
 
 	BoxCollider->InitBoxExtent(FVector(50.0f, 300.0f, 300.0f));
 	BoxCollider->SetCollisionProfileName(TEXT("Trigger"));
+
+	RingEffect = CreateDefaultSubobject<UNiagaraComponent>(TEXT("RingEffect"));
+	RingEffect->SetupAttachment(RootComponent);
+}
+
+void AFlightRing::OnConstruction(const FTransform& Transform)
+{
+	Super::OnConstruction(Transform);
+
+	if (RingEffect)
+	{
+		FLinearColor LeftColor;
+		FLinearColor RightColor;
+
+		switch (RingType)
+		{
+		case ERingType::Start:
+			LeftColor = StartColorLeft;
+			RightColor = StartColorRight;
+			break;
+
+		case ERingType::End:
+			LeftColor = EndColorLeft;
+			RightColor = EndColorRight;
+			break;
+
+		case ERingType::Normal:
+			LeftColor = NormalColorLeft;
+			RightColor = NormalColorRight;
+			break;
+		}
+
+		RingEffect->SetVariableLinearColor(FName("RimColorLeft"), LeftColor);
+		RingEffect->SetVariableLinearColor(FName("RimColorRight"), RightColor);
+		RingEffect->SetVariableFloat(FName("LerpFactor"), LerpFactor);
+	}
 }
 
 void AFlightRing::BeginPlay()
@@ -34,7 +72,21 @@ void AFlightRing::OnRingOverlap(UPrimitiveComponent* OverlappedComp, AActor* Oth
 	{
 		if (ATimeTrialGameMode* TimeTrialGM = Cast<ATimeTrialGameMode>(UGameplayStatics::GetGameMode(this)))
 		{
-			TimeTrialGM->AddRingScore(RingBaseScore, TimePenaltyRate);
+			switch (RingType)
+			{
+			case ERingType::Start:
+				TimeTrialGM->StartRace();
+				break;
+
+			case ERingType::Normal:
+				TimeTrialGM->AddRingScore(RingBaseScore, TimePenaltyRate);
+				break;
+
+			case ERingType::End:
+				TimeTrialGM->AddRingScore(RingBaseScore, TimePenaltyRate);
+				TimeTrialGM->EndRace();
+				break;
+			}
 		}
 
 		if (SuccessSound)

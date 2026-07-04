@@ -20,18 +20,20 @@ void ATimeTrialGameMode::StartRace()
 	CurrentRaceTime = 0.0f;
 	TotalScore = 0;
 	bIsRaceActive = true;
+	OnGameStart.Broadcast();
 }
 
 void ATimeTrialGameMode::EndRace()
 {
 	bIsRaceActive = false;
+	OnRaceEnd.Broadcast(TotalScore);
 }
 
-void ATimeTrialGameMode::BeginPlay()
-{
-	Super::BeginPlay();
-	StartRace();
-}
+// void ATimeTrialGameMode::BeginPlay()
+// {
+// 	// Super::BeginPlay();
+// 	// StartRace();
+// }
 
 void ATimeTrialGameMode::AddRingScore(float RingBaseValue, float TimePenaltyRate)
 {

@@ -4,6 +4,8 @@
 #include "ATimeTrialGameMode.generated.h"
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnScoreChangedSignature, int32, NewScore);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnScoreRaceStartSignature);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnScoreRaceEndSignature, int32, EndScore);
 
 UCLASS()
 class AGD_FINAL_API ATimeTrialGameMode : public AGameModeBase
@@ -27,9 +29,15 @@ public:
 	UPROPERTY(BlueprintAssignable, Category = "Time Trial Events")
 	FOnScoreChangedSignature OnScoreChanged;
 
+	UPROPERTY(BlueprintAssignable, Category = "Time Trial Events")
+	FOnScoreRaceStartSignature OnGameStart;
+
+	UPROPERTY(BlueprintAssignable, Category = "Time Trial Events")
+	FOnScoreRaceEndSignature OnRaceEnd;
+
 protected:
 
-	virtual void BeginPlay() override;
+	// virtual void BeginPlay() override;
 
 	UPROPERTY(BlueprintReadOnly, Category = "Time Trial")
 	bool bIsRaceActive = false;
