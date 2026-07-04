@@ -27,6 +27,12 @@ void ATimeTrialGameMode::EndRace()
 	bIsRaceActive = false;
 }
 
+void ATimeTrialGameMode::BeginPlay()
+{
+	Super::BeginPlay();
+	StartRace();
+}
+
 void ATimeTrialGameMode::AddRingScore(float RingBaseValue, float TimePenaltyRate)
 {
 	if (!bIsRaceActive) return;
@@ -36,4 +42,6 @@ void ATimeTrialGameMode::AddRingScore(float RingBaseValue, float TimePenaltyRate
 	CalculatedScore = FMath::Max(10.0f, CalculatedScore);
 
 	TotalScore += FMath::RoundToInt(CalculatedScore);
+
+	OnScoreChanged.Broadcast(TotalScore);
 }
